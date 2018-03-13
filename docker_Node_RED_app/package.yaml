@@ -1,0 +1,31 @@
+descriptor-schema-version: "2.7"
+info:
+  name: node-red
+  description: devon energy node-red
+  version: "4.0"
+  author-name: Cisco
+app:
+  cpuarch: x86_64
+  env:
+    FLOWS: flows.json
+    NODE_VERSION: 6.13.0
+    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin
+    YARN_VERSION: 1.3.2
+  resources:
+    network:
+    - interface-name: eth0
+      ports:
+        tcp:
+        - "1880"
+    profile: c1.large
+  startup:
+    rootfs: rootfs.tar
+    target:
+    - "npm start"
+    args: 
+    - "--prefix /usr/src/node-red"
+    - "--userDir /root/node-red"
+    user: 900
+    group: 900
+    workdir: /usr/src/node-red
+  type: docker
