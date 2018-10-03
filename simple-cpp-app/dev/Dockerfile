@@ -1,4 +1,4 @@
-FROM dockerhub.cisco.com/iox-docker-dev/base_ir800_devhub
+FROM devhub-docker.cisco.com/iox-docker/ir800/base-rootfs
 
 COPY src /opt/src/
 RUN opkg update

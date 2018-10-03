@@ -1,4 +1,4 @@
-FROM devhub-docker.cisco.com/iox-docker/base-x86_64
+FROM devhub-docker.cisco.com/iox-docker/ir800/base-rootfs
 
 COPY apps /opt/apps/
 RUN opkg update
